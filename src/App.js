@@ -3,7 +3,7 @@ import './styles.css';
 import Navbar from './Components/Navbar';
 import SearchBar from './Components/SearchBar';
 import Pokedex from './Components/Pokedex';
-import { getPokemons } from './api';
+import { getPokemons, getPokemonsData } from './api';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -11,14 +11,18 @@ function App() {
   const fetchPokemons = async () => {
     try {
       const data = await getPokemons();
-      setPokemons(data.results)
-    } catch (error) {
-    }
-  }
+      console.log(data.results);
+      const promises = data.results.map(async (pokemon) => {
+        return await getPokemonsData(pokemon.url);
+      });
+      const results = await Promise.all(promises);
+      setPokemons(results);
+    } catch (error) {}
+  };
 
   useEffect(() => {
     fetchPokemons();
-  }, [])
+  }, []);
 
   return (
     <>
