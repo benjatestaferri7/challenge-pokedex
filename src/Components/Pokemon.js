@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import FavoriteContext from '../Context/favoritesContext';
 
 const Pokemon = (props) => {
   const { pokemon } = props;
+  const { favoritePokemons, updateFavoritePokemons } = useContext(
+    FavoriteContext
+  );
 
-  const redHeart = '&#10084;&#65039;';
-  const blackHeart = '❤';
+  const redHeart = '❤️';
+  const blackHeart = '🖤';
+  const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
+
+  const clickHeart = (e) => {
+    e.preventDefault();
+    updateFavoritePokemons(pokemon.name);
+  };
 
   return (
     <div className="pokemon-card">
@@ -26,8 +36,8 @@ const Pokemon = (props) => {
               );
             })}
           </div>
-          <button>
-            <div className="pokemon-fav">{blackHeart}</div>
+          <button onClick={clickHeart}>
+            <div className="pokemon-fav">{heart}</div>
           </button>
         </div>
       </div>
