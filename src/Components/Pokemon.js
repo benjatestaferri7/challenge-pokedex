@@ -2,7 +2,10 @@ import React from 'react';
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  console.log(pokemon);
+
+  const redHeart = '&#10084;&#65039;';
+  const blackHeart = '❤';
+
   return (
     <div className="pokemon-card">
       <div className="pokemon-img-container">
@@ -16,10 +19,16 @@ const Pokemon = (props) => {
         <div className="card-bottom">
           <div className="pokemon-type">
             {pokemon.types.map((type, idx) => {
-              return <div key={idx} className="pokemon-type-text">{type.type.name}</div>;
+              return (
+                <div key={idx} className="pokemon-type-text">
+                  {type.type.name}
+                </div>
+              );
             })}
           </div>
-          <div className="pokemon-fav">❤</div>
+          <button>
+            <div className="pokemon-fav">{blackHeart}</div>
+          </button>
         </div>
       </div>
     </div>

@@ -4,7 +4,9 @@ export const searchPokemon = async (pokemon) => {
     const res = await fetch(url);
     const data = await res.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getPokemons = async (limit = 10, offset = 0) => {
@@ -13,7 +15,9 @@ export const getPokemons = async (limit = 10, offset = 0) => {
     const res = await fetch(url);
     const data = await res.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getPokemonsData = async (url) => {
@@ -21,5 +25,7 @@ export const getPokemonsData = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

@@ -60,11 +60,17 @@ nav {
   padding: 10px;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /* Pokedex */
 .pokedex-grid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
   padding: 0px 10px;
 }
 

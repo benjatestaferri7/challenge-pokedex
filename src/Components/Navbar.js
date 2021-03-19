@@ -8,7 +8,7 @@ const Navbar = () => {
       <div>
         <img src={pokeapiIMG} alt="pokemon logo" className="navbar-img" />
       </div>
-      <div>❤</div>
+      <div>&#10084;&#65039; {100}</div>
     </nav>
   );
 };
