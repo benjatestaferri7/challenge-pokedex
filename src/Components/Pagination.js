@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Pagination = (props) => {
-  const { onLeftClick, onRightClick, page, totalPages } = props;
-
+const Pagination = ({ onLeftClick, onRightClick, page, totalPages }) => {
   return (
     <div className="pagination">
       <button className="pagination-btn" onClick={onLeftClick}>

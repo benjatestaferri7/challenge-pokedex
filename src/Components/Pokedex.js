@@ -2,9 +2,7 @@ import React from 'react';
 import Pagination from './Pagination';
 import Pokemon from './Pokemon';
 
-const Pokedex = (props) => {
-  const { pokemons, page, setPage, total, loading } = props;
-
+const Pokedex = ({ pokemons, page, setPage, total, loading }) => {
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
     setPage(nextPage);
