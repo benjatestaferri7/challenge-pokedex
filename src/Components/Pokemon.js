@@ -19,7 +19,11 @@ const Pokemon = (props) => {
   return (
     <div className="pokemon-card">
       <div className="pokemon-img-container">
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <img
+          src={pokemon.sprites.front_default}
+          alt={pokemon.name}
+          className="pokemon-img"
+        />
       </div>
       <div className="card-body">
         <div className="card-top">
@@ -36,7 +40,7 @@ const Pokemon = (props) => {
               );
             })}
           </div>
-          <button onClick={clickHeart}>
+          <button onClick={clickHeart} className="pokemon-heart-btn">
             <div className="pokemon-fav">{heart}</div>
           </button>
         </div>

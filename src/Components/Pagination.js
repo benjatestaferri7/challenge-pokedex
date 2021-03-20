@@ -5,7 +5,8 @@ const Pagination = (props) => {
 
   return (
     <div className="pagination">
-      <button onClick={onLeftClick}>
+      <button className="pagination-btn" onClick={onLeftClick}>
+        {/* si la class icon no va aca ponerla en el span */}
         <div>
           <span role="img" aria-label="left">
             👈
@@ -15,7 +16,7 @@ const Pagination = (props) => {
       <div>
         {page} de {totalPages}
       </div>
-      <button onClick={onRightClick}>
+      <button className="pagination-btn" onClick={onRightClick}>
         <div>
           <span role="img" aria-label="right">
             👉
